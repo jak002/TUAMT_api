@@ -66,9 +66,9 @@ namespace TUAMT_api.Backend
             }
         }
 
-        public List<Measure> GetByType(string type)
+        public List<string> GetByType(string type)
         {
-            List<Measure> list = new List<Measure>();
+            List<string> list = new List<string>();
             string SqlCommand = "SELECT * FROM TUAMTMeasures WHERE Type = @TYPE";
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
@@ -80,12 +80,8 @@ namespace TUAMT_api.Backend
                     SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-                        Measure measure = new Measure();
-                        measure.Name = reader.GetString("Name");
-                        measure.Name_Plural = reader.GetString("Name_plural");
-                        measure.Value = reader.GetDouble("Value");
-                        measure.Type = reader.GetString("Type");
-                        list.Add(measure);
+                        string name = reader.GetString("Name");
+                        list.Add(name);
                     }
                     return list;
                 }

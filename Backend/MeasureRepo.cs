@@ -17,9 +17,14 @@
             return measureList;
         }
 
-        public List<Measure> GetByType(string type)
+        public List<string> GetByType(string type)
         {
-            return measureList.FindAll(x => x.Type == type);
+            List<Measure> wholestuff = measureList.FindAll(x => x.Type == type);
+            List<string> names = new List<string>();
+            foreach (Measure measure in wholestuff) {
+                names.Add(measure.Name);
+            }
+            return names;
         }
 
         public Measure GetByName(string name)

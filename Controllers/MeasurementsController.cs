@@ -7,11 +7,11 @@ namespace TUAMT_api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class MeasurementController : ControllerBase
+    public class MeasurementsController : ControllerBase
     {
         private IMeasureRepo _repo;
 
-        public MeasurementController(IMeasureRepo measureRepo)
+        public MeasurementsController(IMeasureRepo measureRepo)
         {
             _repo = measureRepo;
         }
@@ -47,6 +47,10 @@ namespace TUAMT_api.Controllers
             try
             {
                 return Ok(_repo.GetConversion(input, output, amount));
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(ex.Message);
             }
             catch (Exception ex)
             {

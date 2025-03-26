@@ -5,7 +5,7 @@ namespace TUAMT_api.Backend
     {
         List<Measure> GetAll();
         Measure GetByName(string name);
-        List<Measure> GetByType(string type);
+        List<string> GetByType(string type);
         Conversion GetConversion(string input, string output, double amount);
     }
 }
