@@ -9,12 +9,12 @@
 
         public double MeasureToMeter(double amount)
         {
-            return amount / Value;
+            return amount * Value;
         }
 
         public double MeterToMeasure(double amount)
         {
-            return amount * Value;
+            return amount / Value;
         }
     }
 }

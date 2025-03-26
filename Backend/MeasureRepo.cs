@@ -29,9 +29,10 @@
 
         public Conversion GetConversion(string input, string output, double amount)
         {
-            Measure inputMeasure = GetByName(input);
-            Measure outputMeasure = GetByName(output);
-            return new Conversion() { InputMeasure = inputMeasure, OutputMeasure = outputMeasure, Amount = Conversion.Convert(inputMeasure,outputMeasure,amount) };
+                Measure inputMeasure = GetByName(input);
+                Measure outputMeasure = GetByName(output);
+                return new Conversion() { InputMeasure = inputMeasure, OutputMeasure = outputMeasure, Amount = Conversion.Convert(inputMeasure, outputMeasure, amount) };
+
         }
     }
 }

@@ -40,11 +40,18 @@ namespace TUAMT_api.Controllers
         }
 
         // GET api/<MeasurementController>/5
-        [HttpGet("convert/{input}/{output}/{amount}")]
+        [HttpGet("convert")]
         //[Route("name")]
-        public IActionResult Convert(string input, string output, double amount)
+        public IActionResult Convert([FromHeader]string input, [FromHeader]string output, [FromHeader]double amount)
         {
-            return Ok(_repo.GetConversion(input,output,amount));
+            try
+            {
+                return Ok(_repo.GetConversion(input, output, amount));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("You need the following headers to use this: input (string), output (string) and amount (number)");
+            }
         }
     }
 }
