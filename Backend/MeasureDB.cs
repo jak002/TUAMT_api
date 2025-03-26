@@ -23,7 +23,7 @@ namespace TUAMT_api.Backend
                     {
                         Measure measure = new Measure();
                         measure.Name = reader.GetString("Name");
-                        measure.Name_Plural = reader.GetString("Name_plural");
+                        measure.NamePlural = reader.GetString("Name_plural");
                         measure.Value = reader.GetDouble("Value");
                         measure.Type = reader.GetString("Type");
                         list.Add(measure);
@@ -53,7 +53,7 @@ namespace TUAMT_api.Backend
                     {
                         measure = new Measure();
                         measure.Name = reader.GetString("Name");
-                        measure.Name_Plural = reader.GetString("Name_plural");
+                        measure.NamePlural = reader.GetString("Name_plural");
                         measure.Value = reader.GetDouble("Value");
                         measure.Type = reader.GetString("Type");
                     }

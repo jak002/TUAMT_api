@@ -5,11 +5,11 @@
 
         private List<Measure> measureList = new List<Measure>()
         {
-            new Measure() {Name = "Small Boulder", Name_Plural = "Small boulders", Type = "Area", Value = 3.14},
-            new Measure() {Name = "Large Boulder", Name_Plural = "Large boulders", Type = "Area", Value = 3.14},
-            new Measure() {Name = "Beaver", Name_Plural = "Beavers", Type = "Length", Value = 1.2},
-            new Measure() {Name = "Football field", Name_Plural = "Football fields", Type = "Length", Value = 109.8},
-            new Measure() {Name = "Fridge", Name_Plural = "Fridges", Type = "Length", Value = 1.62},
+            new Measure() {Name = "Small Boulder", NamePlural = "Small boulders", Type = "Area", Value = 3.14},
+            new Measure() {Name = "Large Boulder", NamePlural = "Large boulders", Type = "Area", Value = 3.14},
+            new Measure() {Name = "Beaver", NamePlural = "Beavers", Type = "Length", Value = 1.2},
+            new Measure() {Name = "Football field", NamePlural = "Football fields", Type = "Length", Value = 109.8},
+            new Measure() {Name = "Fridge", NamePlural = "Fridges", Type = "Length", Value = 1.62},
         };
 
         public List<Measure> GetAll()
