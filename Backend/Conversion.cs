@@ -2,6 +2,8 @@
 {
     public class Conversion
     {
+
+
         public Measure InputMeasure { get; set; }
         public Measure OutputMeasure { get; set; }
 
@@ -19,7 +21,24 @@
             }
             double initMeters = input.MeasureToMeter(amount);
             double result = output.MeterToMeasure(initMeters);
-            return result;
+            double trimmedResult = TrimDecimals(result);
+
+            return trimmedResult;
         }
+
+        private static double TrimDecimals(double value)
+        {
+            int decimalplace = 0;
+            while (value < 20)
+            {
+                value *= 10;
+                decimalplace++;
+            }
+            value = Math.Round(value);
+            value = value / Math.Pow(10,decimalplace);
+
+            return value;
+        }
+
     }
 }
