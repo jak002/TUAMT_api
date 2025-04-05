@@ -28,15 +28,17 @@
 
         private static double TrimDecimals(double value)
         {
-            int decimalplace = 0;
-            while (value < 20)
+            if (value != 0)
             {
-                value *= 10;
-                decimalplace++;
+                int decimalplace = 0;
+                while (Math.Abs(value) < 20)
+                {
+                    value *= 10;
+                    decimalplace++;
+                }
+                value = Math.Round(value);
+                value = value / Math.Pow(10, decimalplace);
             }
-            value = Math.Round(value);
-            value = value / Math.Pow(10,decimalplace);
-
             return value;
         }
 
